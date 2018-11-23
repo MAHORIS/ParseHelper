@@ -6,9 +6,10 @@ using System.Reflection;
 namespace ParseHelper
 {
     /// <summary>
-    /// ParseHelper
+    /// ParseHelper.cs
     /// </summary>
     /// <remarks>
+    /// release 2018/11/11 ver 1.0.1.0
     /// release 2018/09/30 ver 1.0.0.0
     /// </remarks>
     public class ParseHelper
@@ -30,7 +31,7 @@ namespace ParseHelper
                 var argTypeNames = string.Join(", ", argumentTypes.Select(t => t.Name).ToArray());
                 var targetTypeName = targetType.FullName;
                 var exceptionMessage = $"\"{methodName}({argTypeNames})\" method does not exist in the specified type [{targetTypeName}].";
-                throw new InvalidOperationException(exceptionMessage);
+                throw new NotSupportedException(exceptionMessage);
             }
         }
 
@@ -57,6 +58,12 @@ namespace ParseHelper
 
         public static object Parse(Type targetType, string input)
         {
+            var a1 = targetType ?? throw new ArgumentNullException(nameof(targetType));
+            var a2 = input ?? throw new ArgumentNullException(nameof(input));
+            if (string.IsNullOrWhiteSpace(input))
+            {
+                throw new ArgumentException(nameof(input));
+            }
             var methodName = nameof(Parse);
             var arguments = new object[] { input };
             var argumentTypes = new Type[] { typeof(string) };
@@ -65,6 +72,12 @@ namespace ParseHelper
 
         public static object Parse(Type targetType, string input, IFormatProvider formatProvider)
         {
+            var a1 = targetType ?? throw new ArgumentNullException(nameof(targetType));
+            var a2 = input ?? throw new ArgumentNullException(nameof(input));
+            if (string.IsNullOrWhiteSpace(input))
+            {
+                throw new ArgumentException(nameof(input));
+            }
             var methodName = nameof(Parse);
             var arguments = new object[] { input, formatProvider };
             var argumentTypes = new Type[] { typeof(string), typeof(IFormatProvider) };
@@ -73,6 +86,12 @@ namespace ParseHelper
 
         public static object Parse(Type targetType, string input, NumberStyles numberStyles)
         {
+            var a1 = targetType ?? throw new ArgumentNullException(nameof(targetType));
+            var a2 = input ?? throw new ArgumentNullException(nameof(input));
+            if (string.IsNullOrWhiteSpace(input))
+            {
+                throw new ArgumentException(nameof(input));
+            }
             var methodName = nameof(Parse);
             var arguments = new object[] { input, numberStyles };
             var argumentTypes = new Type[] { typeof(string), typeof(NumberStyles) };
@@ -81,6 +100,12 @@ namespace ParseHelper
 
         public static object Parse(Type targetType, string input, NumberStyles numberStyles, IFormatProvider formatProvider)
         {
+            var a1 = targetType ?? throw new ArgumentNullException(nameof(targetType));
+            var a2 = input ?? throw new ArgumentNullException(nameof(input));
+            if (string.IsNullOrWhiteSpace(input))
+            {
+                throw new ArgumentException(nameof(input));
+            }
             var methodName = nameof(Parse);
             var arguments = new object[] { input, numberStyles, formatProvider };
             var argumentTypes = new Type[] { typeof(string), typeof(NumberStyles), typeof(IFormatProvider) };
@@ -89,6 +114,12 @@ namespace ParseHelper
 
         public static object Parse(Type targetType, string input, IFormatProvider formatProvider, DateTimeStyles dateTimeStyles)
         {
+            var a1 = targetType ?? throw new ArgumentNullException(nameof(targetType));
+            var a2 = input ?? throw new ArgumentNullException(nameof(input));
+            if (string.IsNullOrWhiteSpace(input))
+            {
+                throw new ArgumentException(nameof(input));
+            }
             var methodName = nameof(Parse);
             var arguments = new object[] { input, formatProvider, dateTimeStyles };
             var argumentTypes = new Type[] { typeof(string), typeof(IFormatProvider), typeof(DateTimeStyles) };
@@ -101,6 +132,12 @@ namespace ParseHelper
 
         public static object ParseExact(Type targetType, string input, string format)
         {
+            var a1 = targetType ?? throw new ArgumentNullException(nameof(targetType));
+            var a2 = input ?? throw new ArgumentNullException(nameof(input));
+            if (string.IsNullOrWhiteSpace(input))
+            {
+                throw new ArgumentException(nameof(input));
+            }
             var methodName = nameof(ParseExact);
             var arguments = new object[] { input, format };
             var argumentTypes = new Type[] { typeof(string), typeof(string) };
@@ -109,6 +146,12 @@ namespace ParseHelper
 
         public static object ParseExact(Type targetType, string input, string format, IFormatProvider formatProvider)
         {
+            var a1 = targetType ?? throw new ArgumentNullException(nameof(targetType));
+            var a2 = input ?? throw new ArgumentNullException(nameof(input));
+            if (string.IsNullOrWhiteSpace(input))
+            {
+                throw new ArgumentException(nameof(input));
+            }
             var methodName = nameof(ParseExact);
             var arguments = new object[] { input, format, formatProvider };
             var argumentTypes = new Type[] { typeof(string), typeof(string), typeof(IFormatProvider) };
@@ -117,6 +160,12 @@ namespace ParseHelper
 
         public static object ParseExact(Type targetType, string input, string format, IFormatProvider formatProvider, DateTimeStyles dateTimeStyles)
         {
+            var a1 = targetType ?? throw new ArgumentNullException(nameof(targetType));
+            var a2 = input ?? throw new ArgumentNullException(nameof(input));
+            if (string.IsNullOrWhiteSpace(input))
+            {
+                throw new ArgumentException(nameof(input));
+            }
             var methodName = nameof(ParseExact);
             var arguments = new object[] { input, format, formatProvider, dateTimeStyles };
             var argumentTypes = new Type[] { typeof(string), typeof(string), typeof(IFormatProvider), typeof(DateTimeStyles) };
@@ -125,6 +174,12 @@ namespace ParseHelper
 
         public static object ParseExact(Type targetType, string input, string format, IFormatProvider formatProvider, TimeSpanStyles timeSpanStyles)
         {
+            var a1 = targetType ?? throw new ArgumentNullException(nameof(targetType));
+            var a2 = input ?? throw new ArgumentNullException(nameof(input));
+            if (string.IsNullOrWhiteSpace(input))
+            {
+                throw new ArgumentException(nameof(input));
+            }
             var methodName = nameof(ParseExact);
             var arguments = new object[] { input, format, formatProvider, timeSpanStyles };
             var argumentTypes = new Type[] { typeof(string), typeof(string), typeof(IFormatProvider), typeof(TimeSpanStyles) };
@@ -133,6 +188,12 @@ namespace ParseHelper
 
         public static object ParseExact(Type targetType, string input, string[] formats, IFormatProvider formatProvider)
         {
+            var a1 = targetType ?? throw new ArgumentNullException(nameof(targetType));
+            var a2 = input ?? throw new ArgumentNullException(nameof(input));
+            if (string.IsNullOrWhiteSpace(input))
+            {
+                throw new ArgumentException(nameof(input));
+            }
             var methodName = nameof(ParseExact);
             var arguments = new object[] { input, formats, formatProvider };
             var argumentTypes = new Type[] { typeof(string), typeof(string[]), typeof(IFormatProvider) };
@@ -141,6 +202,12 @@ namespace ParseHelper
 
         public static object ParseExact(Type targetType, string input, string[] formats, IFormatProvider formatProvider, DateTimeStyles dateTimeStyles)
         {
+            var a1 = targetType ?? throw new ArgumentNullException(nameof(targetType));
+            var a2 = input ?? throw new ArgumentNullException(nameof(input));
+            if (string.IsNullOrWhiteSpace(input))
+            {
+                throw new ArgumentException(nameof(input));
+            }
             var methodName = nameof(ParseExact);
             var arguments = new object[] { input, formats, formatProvider, dateTimeStyles };
             var argumentTypes = new Type[] { typeof(string), typeof(string[]), typeof(IFormatProvider), typeof(DateTimeStyles) };
@@ -149,6 +216,12 @@ namespace ParseHelper
 
         public static object ParseExact(Type targetType, string input, string[] formats, IFormatProvider formatProvider, TimeSpanStyles timeSpanStyles)
         {
+            var a1 = targetType ?? throw new ArgumentNullException(nameof(targetType));
+            var a2 = input ?? throw new ArgumentNullException(nameof(input));
+            if (string.IsNullOrWhiteSpace(input))
+            {
+                throw new ArgumentException(nameof(input));
+            }
             var methodName = nameof(ParseExact);
             var arguments = new object[] { input, formats, formatProvider, timeSpanStyles };
             var argumentTypes = new Type[] { typeof(string), typeof(string[]), typeof(IFormatProvider), typeof(TimeSpanStyles) };
@@ -161,41 +234,89 @@ namespace ParseHelper
 
         public static bool TryParse(Type targetType, string input, out object result)
         {
+            var returnValue = false;
+            result = default(object);
+            if (targetType == null) return returnValue;
             var methodName = nameof(TryParse);
             var arguments = new object[] { input, null };
             var argumentTypes = new Type[] { typeof(string), targetType.MakeByRefType() };
-            var returnValue = (bool)Invoke(targetType, methodName, argumentTypes, arguments);
-            result = returnValue ? arguments.Last() : default(object);
+            try
+            {
+                returnValue = (bool)Invoke(targetType, methodName, argumentTypes, arguments);
+                if (returnValue)
+                {
+                    result = arguments.Last();
+                }
+            }
+            catch (Exception)
+            {
+            }
             return returnValue;
         }
 
         public static bool TryParse(Type targetType, string input, NumberStyles numberStyles, IFormatProvider formatProvider, out object result)
         {
+            var returnValue = false;
+            result = default(object);
+            if (targetType == null) return returnValue;
             var methodName = nameof(TryParse);
             var arguments = new object[] { input, numberStyles, formatProvider, null };
             var argumentTypes = new Type[] { typeof(string), typeof(NumberStyles), typeof(IFormatProvider), targetType.MakeByRefType() };
-            var returnValue = (bool)Invoke(targetType, methodName, argumentTypes, arguments);
-            result = returnValue ? arguments.Last() : default(object);
+            try
+            {
+                returnValue = (bool)Invoke(targetType, methodName, argumentTypes, arguments);
+                if (returnValue)
+                {
+                    result = arguments.Last();
+                }
+            }
+            catch (Exception)
+            {
+            }
             return returnValue;
         }
 
         public static bool TryParse(Type targetType, string input, IFormatProvider formatProvider, out object result)
         {
+            var returnValue = false;
+            result = default(object);
+            if (targetType == null) return returnValue;
             var methodName = nameof(TryParse);
             var arguments = new object[] { input, formatProvider, null };
             var argumentTypes = new Type[] { typeof(string), typeof(IFormatProvider), targetType.MakeByRefType() };
-            var returnValue = (bool)Invoke(targetType, methodName, argumentTypes, arguments);
-            result = returnValue ? arguments.Last() : default(object);
+            try
+            {
+                returnValue = (bool)Invoke(targetType, methodName, argumentTypes, arguments);
+                if (returnValue)
+                {
+                    result = arguments.Last();
+                }
+            }
+            catch (Exception)
+            {
+            }
             return returnValue;
         }
 
         public static bool TryParse(Type targetType, string input, IFormatProvider formatProvider, DateTimeStyles dateTimeStyles, out object result)
         {
+            var returnValue = false;
+            result = default(object);
+            if (targetType == null) return returnValue;
             var methodName = nameof(TryParse);
             var arguments = new object[] { input, formatProvider, dateTimeStyles, null };
             var argumentTypes = new Type[] { typeof(string), typeof(IFormatProvider), typeof(DateTimeStyles), targetType.MakeByRefType() };
-            var returnValue = (bool)Invoke(targetType, methodName, argumentTypes, arguments);
-            result = returnValue ? arguments.Last() : default(object);
+            try
+            {
+                returnValue = (bool)Invoke(targetType, methodName, argumentTypes, arguments);
+                if (returnValue)
+                {
+                    result = arguments.Last();
+                }
+            }
+            catch (Exception)
+            {
+            }
             return returnValue;
         }
 
@@ -205,71 +326,155 @@ namespace ParseHelper
 
         public static bool TryParseExact(Type targetType, string input, string format, out object result)
         {
+            var returnValue = false;
+            result = default(object);
+            if (targetType == null) return returnValue;
             var methodName = nameof(TryParseExact);
             var arguments = new object[] { input, format, null };
             var argumentTypes = new Type[] { typeof(string), typeof(string), targetType.MakeByRefType() };
-            var returnValue = (bool)Invoke(targetType, methodName, argumentTypes, arguments);
-            result = returnValue ? arguments.Last() : default(object);
+            try
+            {
+                returnValue = (bool)Invoke(targetType, methodName, argumentTypes, arguments);
+                if (returnValue)
+                {
+                    result = arguments.Last();
+                }
+            }
+            catch (Exception)
+            {
+            }
             return returnValue;
         }
 
         public static bool TryParseExact(Type targetType, string input, string format, IFormatProvider formatProvider, out object result)
         {
+            var returnValue = false;
+            result = default(object);
+            if (targetType == null) return returnValue;
             var methodName = nameof(TryParseExact);
             var arguments = new object[] { input, format, formatProvider, null };
             var argumentTypes = new Type[] { typeof(string), typeof(string), typeof(IFormatProvider), targetType.MakeByRefType() };
-            var returnValue = (bool)Invoke(targetType, methodName, argumentTypes, arguments);
-            result = returnValue ? arguments.Last() : default(object);
+            try
+            {
+                returnValue = (bool)Invoke(targetType, methodName, argumentTypes, arguments);
+                if (returnValue)
+                {
+                    result = arguments.Last();
+                }
+            }
+            catch (Exception)
+            {
+            }
             return returnValue;
         }
 
         public static bool TryParseExact(Type targetType, string input, string format, IFormatProvider formatProvider, DateTimeStyles dateTimeStyles, out object result)
         {
+            var returnValue = false;
+            result = default(object);
+            if (targetType == null) return returnValue;
             var methodName = nameof(TryParseExact);
             var arguments = new object[] { input, format, formatProvider, dateTimeStyles, null };
             var argumentTypes = new Type[] { typeof(string), typeof(string), typeof(IFormatProvider), typeof(DateTimeStyles), targetType.MakeByRefType() };
-            var returnValue = (bool)Invoke(targetType, methodName, argumentTypes, arguments);
-            result = returnValue ? arguments.Last() : default(object);
+            try
+            {
+                returnValue = (bool)Invoke(targetType, methodName, argumentTypes, arguments);
+                if (returnValue)
+                {
+                    result = arguments.Last();
+                }
+            }
+            catch (Exception)
+            {
+            }
             return returnValue;
         }
 
         public static bool TryParseExact(Type targetType, string input, string format, IFormatProvider formatProvider, TimeSpanStyles timeSpanStyles, out object result)
         {
+            var returnValue = false;
+            result = default(object);
+            if (targetType == null) return returnValue;
             var methodName = nameof(TryParseExact);
             var arguments = new object[] { input, format, formatProvider, timeSpanStyles, null };
             var argumentTypes = new Type[] { typeof(string), typeof(string), typeof(IFormatProvider), typeof(TimeSpanStyles), targetType.MakeByRefType() };
-            var returnValue = (bool)Invoke(targetType, methodName, argumentTypes, arguments);
-            result = returnValue ? arguments.Last() : default(object);
+            try
+            {
+                returnValue = (bool)Invoke(targetType, methodName, argumentTypes, arguments);
+                if (returnValue)
+                {
+                    result = arguments.Last();
+                }
+            }
+            catch (Exception)
+            {
+            }
             return returnValue;
         }
 
         public static bool TryParseExact(Type targetType, string input, string[] formats, IFormatProvider formatProvider, out object result)
         {
+            var returnValue = false;
+            result = default(object);
+            if (targetType == null) return returnValue;
             var methodName = nameof(TryParseExact);
             var arguments = new object[] { input, formats, formatProvider, null };
             var argumentTypes = new Type[] { typeof(string), typeof(string[]), typeof(IFormatProvider), targetType.MakeByRefType() };
-            var returnValue = (bool)Invoke(targetType, methodName, argumentTypes, arguments);
-            result = returnValue ? arguments.Last() : default(object);
+            try
+            {
+                returnValue = (bool)Invoke(targetType, methodName, argumentTypes, arguments);
+                if (returnValue)
+                {
+                    result = arguments.Last();
+                }
+            }
+            catch (Exception)
+            {
+            }
             return returnValue;
         }
 
         public static bool TryParseExact(Type targetType, string input, string[] formats, IFormatProvider formatProvider, DateTimeStyles dateTimeStyles, out object result)
         {
+            var returnValue = false;
+            result = default(object);
+            if (targetType == null) return returnValue;
             var methodName = nameof(TryParseExact);
             var arguments = new object[] { input, formats, formatProvider, dateTimeStyles, null };
             var argumentTypes = new Type[] { typeof(string), typeof(string[]), typeof(IFormatProvider), typeof(DateTimeStyles), targetType.MakeByRefType() };
-            var returnValue = (bool)Invoke(targetType, methodName, argumentTypes, arguments);
-            result = returnValue ? arguments.Last() : default(object);
+            try
+            {
+                returnValue = (bool)Invoke(targetType, methodName, argumentTypes, arguments);
+                if (returnValue)
+                {
+                    result = arguments.Last();
+                }
+            }
+            catch (Exception)
+            {
+            }
             return returnValue;
         }
 
         public static bool TryParseExact(Type targetType, string input, string[] formats, IFormatProvider formatProvider, TimeSpanStyles timeSpanStyles, out object result)
         {
+            var returnValue = false;
+            result = default(object);
+            if (targetType == null) return returnValue;
             var methodName = nameof(TryParseExact);
             var arguments = new object[] { input, formats, formatProvider, timeSpanStyles, null };
             var argumentTypes = new Type[] { typeof(string), typeof(string[]), typeof(IFormatProvider), typeof(TimeSpanStyles), targetType.MakeByRefType() };
-            var returnValue = (bool)Invoke(targetType, methodName, argumentTypes, arguments);
-            result = returnValue ? arguments.Last() : default(object);
+            try
+            {
+                returnValue = (bool)Invoke(targetType, methodName, argumentTypes, arguments);
+                if (returnValue)
+                {
+                    result = arguments.Last();
+                }
+            }
+            catch (Exception)
+            {
+            }
             return returnValue;
         }
 
@@ -352,28 +557,28 @@ namespace ParseHelper
         public static bool TryParse<TTargetType>(string input, out TTargetType result)
         {
             var canParse = TryParse(typeof(TTargetType), input, out object parsed);
-            result = (TTargetType)parsed;
+            result = canParse ? (TTargetType)parsed : default(TTargetType);
             return canParse;
         }
 
         public static bool TryParse<TTargetType>(string input, NumberStyles numberStyles, IFormatProvider formatProvider, out TTargetType result)
         {
             var canParse = TryParse(typeof(TTargetType), input, numberStyles, formatProvider, out object parsed);
-            result = (TTargetType)parsed;
+            result = canParse ? (TTargetType)parsed : default(TTargetType);
             return canParse;
         }
 
         public static bool TryParse<TTargetType>(string input, IFormatProvider formatProvider, out TTargetType result)
         {
             var canParse = TryParse(typeof(TTargetType), input, formatProvider, out object parsed);
-            result = (TTargetType)parsed;
+            result = canParse ? (TTargetType)parsed : default(TTargetType);
             return canParse;
         }
 
         public static bool TryParse<TTargetType>(string input, IFormatProvider formatProvider, DateTimeStyles dateTimeStyles, out TTargetType result)
         {
             var canParse = TryParse(typeof(TTargetType), input, formatProvider, dateTimeStyles, out object parsed);
-            result = (TTargetType)parsed;
+            result = canParse ? (TTargetType)parsed : default(TTargetType);
             return canParse;
         }
 
@@ -384,49 +589,49 @@ namespace ParseHelper
         public static bool TryParseExact<TTargetType>(string input, string format, out TTargetType result)
         {
             var canParse = TryParseExact(typeof(TTargetType), input, format, out object parsed);
-            result = (TTargetType)parsed;
+            result = canParse ? (TTargetType)parsed : default(TTargetType);
             return canParse;
         }
 
         public static bool TryParseExact<TTargetType>(string input, string format, IFormatProvider formatProvider, out TTargetType result)
         {
             var canParse = TryParseExact(typeof(TTargetType), input, format, formatProvider, out object parsed);
-            result = (TTargetType)parsed;
+            result = canParse ? (TTargetType)parsed : default(TTargetType);
             return canParse;
         }
 
         public static bool TryParseExact<TTargetType>(string input, string format, IFormatProvider formatProvider, DateTimeStyles dateTimeStyles, out TTargetType result)
         {
             var canParse = TryParseExact(typeof(TTargetType), input, format, formatProvider, dateTimeStyles, out object parsed);
-            result = (TTargetType)parsed;
+            result = canParse ? (TTargetType)parsed : default(TTargetType);
             return canParse;
         }
 
         public static bool TryParseExact<TTargetType>(string input, string format, IFormatProvider formatProvider, TimeSpanStyles timeSpanStyles, out TTargetType result)
         {
             var canParse = TryParseExact(typeof(TTargetType), input, format, formatProvider, timeSpanStyles, out object parsed);
-            result = (TTargetType)parsed;
+            result = canParse ? (TTargetType)parsed : default(TTargetType);
             return canParse;
         }
 
         public static bool TryParseExact<TTargetType>(string input, string[] formats, IFormatProvider formatProvider, out TTargetType result)
         {
             var canParse = TryParseExact(typeof(TTargetType), input, formats, formatProvider, out object parsed);
-            result = (TTargetType)parsed;
+            result = canParse ? (TTargetType)parsed : default(TTargetType);
             return canParse;
         }
 
         public static bool TryParseExact<TTargetType>(string input, string[] formats, IFormatProvider formatProvider, DateTimeStyles dateTimeStyles, out TTargetType result)
         {
             var canParse = TryParseExact(typeof(TTargetType), input, formats, formatProvider, dateTimeStyles, out object parsed);
-            result = (TTargetType)parsed;
+            result = canParse ? (TTargetType)parsed : default(TTargetType);
             return canParse;
         }
 
         public static bool TryParseExact<TTargetType>(string input, string[] formats, IFormatProvider formatProvider, TimeSpanStyles timeSpanStyles, out TTargetType result)
         {
             var canParse = TryParseExact(typeof(TTargetType), input, formats, formatProvider, timeSpanStyles, out object parsed);
-            result = (TTargetType)parsed;
+            result = canParse ? (TTargetType)parsed : default(TTargetType);
             return canParse;
         }
 
